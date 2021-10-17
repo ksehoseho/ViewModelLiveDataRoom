@@ -1,7 +1,8 @@
-package com.test.viewmodellivedataroom
+package com.test.viewmodellivedataroom.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.test.viewmodellivedataroom.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
