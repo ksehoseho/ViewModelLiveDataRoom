@@ -74,4 +74,10 @@ dependencies {
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:2.4.0-beta01")
 
+    // 코루틴 (lifecycleScope)
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+
+    // ViewModel 안에서 코루틴 사용
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
+
 }

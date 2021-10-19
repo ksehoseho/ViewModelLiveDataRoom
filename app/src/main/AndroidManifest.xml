@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewModelLiveDataRoom">
         <activity
+            android:name=".view.RoomTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
