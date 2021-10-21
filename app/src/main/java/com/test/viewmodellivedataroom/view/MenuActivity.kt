@@ -19,5 +19,10 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, RoomTestActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnRetrofit.setOnClickListener() {
+            val intent = Intent(this, RetrofitActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
