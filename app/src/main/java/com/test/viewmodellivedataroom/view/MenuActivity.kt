@@ -15,6 +15,11 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_menu)
 
+        binding.btnNavigation.setOnClickListener() {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnRoom.setOnClickListener() {
             val intent = Intent(this, RoomTestActivity::class.java)
             startActivity(intent)

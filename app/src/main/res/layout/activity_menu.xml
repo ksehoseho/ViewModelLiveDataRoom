@@ -16,9 +16,16 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/btn_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bottom Navigation"/>
+
+            <Button
                 android:id="@+id/btn_view_model"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
                 android:text="ViewModel - LiveData"/>
 
             <Button
