@@ -16,7 +16,7 @@ class RetrofitManager {
     private val  iRetrofit : IRetrofit? = RetrofitClient.getClient(Constants.API.BASE_URL)?.create(IRetrofit::class.java)
 
     //
-    fun searchRoute(strQuery: String?, completion: (Constants.RES_STATE, String) -> Unit) {
+    fun searchRoute(strQuery: String?, completion: (Constants.ResponseState, String) -> Unit) {
         val query = strQuery ?: ""
         val call: Call<JsonElement> = iRetrofit?.searchRoute(query).let {
             it!!
@@ -24,20 +24,20 @@ class RetrofitManager {
 
         call.enqueue(object: retrofit2.Callback<JsonElement> {
             override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
-                Log.e("test", "onResponse() : ${response.raw()}")
-                Log.e("test", "onResponse() : ${response.body().toString()}")
-                completion(Constants.RES_STATE.OK, response.body().toString())
+                Log.e("test", "response.raw() : ${response.raw()}")
+                Log.e("test", "response.body() : ${response.body().toString()}")
+                completion(Constants.ResponseState.OK, response.body().toString())
             }
 
             override fun onFailure(call: Call<JsonElement>, t: Throwable) {
-                Log.e("test", "onResponse() : ${t.printStackTrace()}")
-                completion(Constants.RES_STATE.FAIL, t.toString())
+                Log.e("test", "onFailure() : ${t.printStackTrace()}")
+                completion(Constants.ResponseState.FAIL, t.toString())
             }
 
         })
     }
 
-    fun searchStation(strQuery: String?, completion: (Constants.RES_STATE, String) -> Unit) {
+    fun searchStation(strQuery: String?, completion: (Constants.ResponseState, String) -> Unit) {
         val query = strQuery ?: ""
         val call: Call<JsonElement> = iRetrofit?.searchStation(query).let {
             it!!
@@ -45,14 +45,14 @@ class RetrofitManager {
 
         call.enqueue(object: retrofit2.Callback<JsonElement> {
             override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
-                Log.e("test", "onResponse() : ${response.raw()}")
-                Log.e("test", "onResponse() : ${response.body().toString()}")
-                completion(Constants.RES_STATE.OK, response.body().toString())
+                Log.e("test", "response.raw() : ${response.raw()}")
+                Log.e("test", "response.body() : ${response.body().toString()}")
+                completion(Constants.ResponseState.OK, response.body().toString())
             }
 
             override fun onFailure(call: Call<JsonElement>, t: Throwable) {
-                Log.e("test", "onResponse() : ${t.printStackTrace()}")
-                completion(Constants.RES_STATE.FAIL, t.toString())
+                Log.e("test", "onFailure() : ${t.printStackTrace()}")
+                completion(Constants.ResponseState.FAIL, t.toString())
             }
 
         })

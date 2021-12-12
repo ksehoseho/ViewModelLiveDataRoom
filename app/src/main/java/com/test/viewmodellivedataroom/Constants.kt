@@ -2,7 +2,7 @@ package com.test.viewmodellivedataroom
 
 class Constants {
 
-    enum class RES_STATE {
+    enum class ResponseState {
         OK,
         FAIL
     }

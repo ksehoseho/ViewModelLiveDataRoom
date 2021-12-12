@@ -17,3 +17,11 @@ interface IRetrofit {
     fun searchStation(@Query("stSrch") stSrch: String) : Call<JsonElement>
 
 }
+
+
+/*
+통신할 API 정리
+IRetrofitSeoul
+IRetrofitGG
+IRetrofitIC
+ */
